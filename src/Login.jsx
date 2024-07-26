@@ -39,8 +39,8 @@ export function Login({onLogin}) {
             <input name="username" value={data.username} onChange={handleInputChange}/>
             <input name="password" type="password" value={data.password} onChange={handleInputChange}/>
             <input name="checkbox" type="checkbox" checked={data.session} onChange={handleInputChange}/>
-            <button disabled={!data.username || !data.password} onClick={handleLogin}>Login</button>
-            <button onClick={handleResetForm}>Reset</button>
+            <button disabled={!data.username || !data.password}>Login</button>
+            <button type="button" onClick={handleResetForm}>Reset</button>
         </form>
     )
 }
