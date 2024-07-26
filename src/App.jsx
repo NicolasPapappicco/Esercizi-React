@@ -1,10 +1,14 @@
-import { MouseClicker } from "./MouseClicker";
+import { InteractiveWelcome } from "./InteractiveWelcome";
+import { Login } from "./Login";
+import { MyForm } from "./MyForm";
 
 
 export function App() {
     return (
         <div>
-            <MouseClicker/>
+            <MyForm/>
+            <InteractiveWelcome/>
+            <Login/>
         </div>
     )
 }
