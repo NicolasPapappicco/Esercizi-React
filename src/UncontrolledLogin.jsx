@@ -1,10 +1,5 @@
 export function UncontrolledLogin() {
-    function onLogin() {
-        const input = document.querySelectorAll("input")
-        input.forEach((data) => data.type === "checkbox" ? console.log(data.checked) : console.log(data.value))
-    }
-
-    function handleFormSubmit(event) {
+    function onLogin(event) {
         event.preventDefault()
 
         const username = event.target.elements.namedItem("username").value
@@ -21,8 +16,9 @@ export function UncontrolledLogin() {
     }
 
     function loginWithFormData(event) {
-        const form = document.querySelector("form")
-        const formData = new FormData(form)
+        event.preventDefault()
+
+        const formData = new FormData(event.target)
 
         const data = {
             username: formData.get("username"),
@@ -34,11 +30,11 @@ export function UncontrolledLogin() {
     }
 
     return (
-        <form onSubmit={handleFormSubmit}>
+        <form onSubmit={onLogin}>
             <input name="username"/>
             <input name="password" type="password" />
             <input name="session" type="checkbox" />
-            <button onClick={onLogin}>Login</button>
+            <button>Login</button>
             <button onClick={loginWithFormData}>FormData</button>
         </form>
     )
