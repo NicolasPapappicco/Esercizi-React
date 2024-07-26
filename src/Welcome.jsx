@@ -4,7 +4,7 @@ export function Welcome({ name, age }) {
     return (
         <div>
             <p>Welcome, <strong>{name}</strong>!</p>
-            <Age age={age} />
+            <Age age={age} name={name}/>
         </div> 
     )
 }
