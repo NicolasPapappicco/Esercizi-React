@@ -11,16 +11,7 @@ import { UncontrolledLogin } from "./UncontrolledLogin";
 export function App() {
     return (
         <div>
-            <Colors
-                array={[
-                    {id: 1, name: "Blue"},
-                    {id: 2, name: "Red"},
-                    {id: 3, name: "Yellow"},
-                    {id: 4, name: "Green"},
-                ]}
-            />
             <TodoList/>
-            <Login/>
         </div>
     )
 }
