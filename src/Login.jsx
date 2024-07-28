@@ -36,10 +36,13 @@ export function Login({onLogin}) {
 
     return (
         <form onSubmit={handleLogin}>
+            <h1>Login</h1>
             <input name="username" value={data.username} onChange={handleInputChange}/>
             <input name="password" type="password" value={data.password} onChange={handleInputChange}/>
             <input name="checkbox" type="checkbox" checked={data.session} onChange={handleInputChange}/>
-            <button disabled={!data.username || !data.password}>Login</button>
+            <button style={{
+                backgroundColor: data.password.length < 8 ? "red" : "green"
+            }} disabled={!data.username || !data.password}>Login</button>
             <button type="button" onClick={handleResetForm}>Reset</button>
         </form>
     )
